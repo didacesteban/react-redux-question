@@ -10,6 +10,8 @@ class InputQuestion extends Component {
             <div>
               <input type="text" />
               <button onClick={() => this.props.sendQuestion(question)}>send</button>
+              <hr/>
+              <h2>{this.props.question}</h2>
             </div>
         );
     }
@@ -17,7 +19,7 @@ class InputQuestion extends Component {
 
 function mapStateToProps(state) {
     return {
-        question: state.question
+        question: state.sendQuestion
     };
 }
 
