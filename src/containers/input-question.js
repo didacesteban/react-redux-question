@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {sendQuestion} from '../actions/index'
-import {clearQuestion} from '../actions/index'
+import {sendQuestion, clearQuestion} from '../actions/index'
 
 
 class InputQuestion extends Component {
@@ -31,7 +30,7 @@ class InputQuestion extends Component {
 
 function mapStateToProps(state) {
     return {
-        question: state.sendQuestion
+        question: state.questionActions
     };
 }
 
