@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {sendQuestion} from '../actions/index'
+import {clearQuestion} from '../actions/index'
 
 
 class InputQuestion extends Component {
@@ -9,7 +10,6 @@ class InputQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
-
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -18,10 +18,9 @@ class InputQuestion extends Component {
   }
 
  render() {
-      let question = 'question test';
         return (
             <div>
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text" onClick={() => this.props.clearQuestion(this.state.value)} value={this.state.value} onChange={this.handleChange} />
               <button onClick={() => this.props.sendQuestion(this.state.value)}>send</button>
               <hr/>
               <h2>{this.props.question}</h2>
@@ -37,7 +36,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch){
-    return bindActionCreators({sendQuestion: sendQuestion}, dispatch);
+    return bindActionCreators({sendQuestion: sendQuestion, clearQuestion: clearQuestion}, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(InputQuestion);
