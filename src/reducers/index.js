@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import SendQuestion from './reducer-send-question';
+import QuestionActions from './reducer-send-question';
 
 const allReducers = combineReducers({
-    sendQuestion: SendQuestion
+    questionActions: QuestionActions
 });
 
 export default allReducers

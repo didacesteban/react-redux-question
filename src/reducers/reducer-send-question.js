@@ -11,6 +11,8 @@ export default function (state = null, action) {
             case 3:
               return 'Maybe';
           }
+        case 'CLEAR_QUESTION':
+              return '';
     }
     return state;
 }
