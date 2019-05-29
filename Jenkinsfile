@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'git status'
+                sh 'git pull master testing-ci-branch'
+                sh 'git pull origin master'
             }
         }
     }
