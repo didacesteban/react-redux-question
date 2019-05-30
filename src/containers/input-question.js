@@ -20,7 +20,7 @@ class InputQuestion extends Component {
         return (
             <div>
               <input type="text" onClick={() => this.props.clearQuestion(this.state.value)} value={this.state.value} onChange={this.handleChange} />
-              <button onClick={() => this.props.sendQuestion(this.state.value)}>send</button>
+              <button onClick={() => this.props.sendQuestion(this.state.value)}>Send!</button>
               <hr/>
               <h2>{this.props.question}</h2>
             </div>
